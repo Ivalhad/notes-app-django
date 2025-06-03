@@ -25,4 +25,10 @@ class NoteSerializer(serializers.HyperlinkedModelSerializer):
                 "action": "GET",
                 "types": ["application/json"],
             },
+            {
+                "rel": "self",
+                "href": reverse("note-detail", kwargs={"pk": obj.pk}, request=request),
+                "action": "PUT",
+                "types": ["application/json"],
+            },
         ]
